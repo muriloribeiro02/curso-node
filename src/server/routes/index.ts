@@ -1,5 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import {Router} from 'express';
 import {StatusCodes} from 'http-status-codes'
+
+import {CidadesController} from './../controllers';
+
+CidadesController.create
 
 const router = Router();
 
@@ -7,10 +12,6 @@ router.get('/', (_, res) => {
     res.send('Olá DEV!');
 })
 
-router.post('/teste', (req, res) => {
-    console.log(req.body)
-
-    res.status(StatusCodes.OK).json(req.body);
-})
+router.post('/cidades', CidadesController.create)
 
 export {router}
